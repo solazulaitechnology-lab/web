@@ -1,20 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <title>Solazul AI Technology</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffd25a"/>
-      <stop offset="1" stop-color="#ff8a1f"/>
-    </linearGradient>
-    <linearGradient id="light" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#cfe0ff"/>
-      <stop offset="1" stop-color="#ffffff"/>
-    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd65a"/><stop offset=".55" stop-color="#ffb81c"/><stop offset="1" stop-color="#ff6a13"/></linearGradient>
+    <clipPath id="c"><circle cx="32" cy="36" r="17"/></clipPath>
   </defs>
-  <rect width="64" height="64" rx="15" fill="#1b3fd8"/>
-  <g transform="translate(32 32) scale(0.8) translate(-32.5 -32)" fill="none" stroke-width="8" stroke-linecap="butt">
-    <path d="M43.3 12.5A13 13 0 1 0 32 32" stroke="url(#sun)"/>
-    <path d="M32 32A13 13 0 1 1 20.7 51.5" stroke="url(#light)"/>
-    <circle cx="43.3" cy="12.5" r="7" fill="url(#sun)" stroke="none"/>
-    <circle cx="20.7" cy="51.5" r="5.5" fill="#ffffff" stroke="none"/>
+  <rect width="64" height="64" rx="14" fill="#1a2fd1"/>
+  <path d="M13.12 29.18L6.89 29.27L12.24 32.47ZM19.34 20.37L10.79 14.79L16.37 23.34ZM28.47 16.24L25.27 10.89L25.18 17.12ZM39.20 17.23L39.76 7.02L35.15 16.14ZM47.34 23.06L50.38 17.62L44.94 20.66ZM51.86 32.85L60.98 28.24L50.77 28.80Z" fill="#ffb81c"/>
+  <g clip-path="url(#c)">
+    <rect x="14" y="18" width="36" height="20.6" fill="url(#g)"/>
+    <rect x="14" y="40.6" width="36" height="3.6" fill="#ff8a3d"/>
+    <rect x="14" y="46.2" width="36" height="3" fill="#c3d4ff"/>
+    <rect x="14" y="51.2" width="36" height="2.8" fill="#8fa6ff"/>
   </g>
 </svg>

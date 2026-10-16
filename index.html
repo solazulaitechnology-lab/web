@@ -3,283 +3,376 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solazul AI Technology | AI agents and workflow automation for business</title>
-<meta name="description" content="Solazul AI Technology designs and builds teams of AI agents and automated workflows that take repetitive work off your team and make your business processes more efficient.">
-<meta name="theme-color" content="#1b3fd8">
+<title>Solazul AI Consultants | AI agents and workflow automation for business</title>
+<meta name="description" content="Solazul AI Consultants designs and builds teams of AI agents and automated workflows that take repetitive work off your team and make your business processes more efficient.">
+<meta name="theme-color" content="#1a2fd1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Solazul AI Technology">
+<meta property="og:title" content="Solazul AI Consultants">
 <meta property="og:description" content="AI agents and workflow automation that take the routine work off your team.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Schibsted+Grotesk:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
 <style>
+/*
+  Solazul: "sol" + "azul". The page is built from those two things:
+  a sun rising over a horizon of Málaga-blue tiles, and plain, quiet sections after it.
+*/
 :root{
-  --azul:#1b3fd8;
-  --azul-deep:#0f2494;
-  --ink:#0c1a4a;
-  --paper:#f6f9ff;
-  --mist:#e6edff;
-  --line:#cfdaf7;
-  --muted:#475791;
-  --sun:#ffc233;
-  --ember:#ff8a1f;
-  --focus:#1b3fd8;
-  --head:"Familjen Grotesk","Avenir Next","Segoe UI","Helvetica Neue",Arial,sans-serif;
-  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --gutter:clamp(1.25rem,5vw,3rem);
-  --max:72rem;
+  --ultra:#1a2fd1;        /* azulejo cobalt, the brand blue */
+  --ultra-deep:#1124a8;   /* horizon tiles */
+  --ultra-light:#6a80ff;  /* agent nodes on dark */
+  --noche:#071042;        /* night navy: text and dark sections */
+  --cal:#f7f8fc;          /* whitewash */
+  --niebla:#e4e9fb;       /* blue mist band */
+  --line:#cdd5f3;
+  --muted:#4a5687;
+  --sol:#ffb81c;          /* sun */
+  --brasa:#ff6a13;        /* ember */
+  --focus:var(--ultra);
+  --display:"Anybody","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --text:"Schibsted Grotesk","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(1rem,5vw,3rem);
+  --max:76rem;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance}
+body{margin:0;background:var(--cal);color:var(--noche);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
 p{margin:0}
-svg{max-width:100%}
 a{color:inherit}
+svg{max-width:100%}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
-.section{padding-block:clamp(3.5rem,8vw,6.5rem)}
-.band{background:var(--mist)}
-.on-azul{--focus:var(--sun)}
+.section{padding-block:clamp(4rem,9vw,7.5rem)}
 
-.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:8px;font-family:var(--head);text-decoration:none}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--sol);color:var(--noche);padding:.6rem 1rem;border-radius:8px;font-weight:600;text-decoration:none}
 .skip:focus{top:1rem}
 
-h2{font-size:clamp(1.9rem, 1.2rem + 2.6vw, 3rem);line-height:1.08;letter-spacing:-.02em;font-weight:700}
-h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
-.section-head{max-width:44rem}
-.section-head p{margin-top:1.1rem;color:var(--muted)}
+h2{font-size:clamp(2rem,1.1rem + 3vw,3.6rem);line-height:1;letter-spacing:-.015em;font-weight:800;font-stretch:118%}
+h3{font-size:1.2rem;line-height:1.2;font-weight:700;font-stretch:108%}
+.section-head{max-width:46rem}
+.section-head p{margin-top:1.25rem;max-width:38rem;color:var(--muted);font-size:1.125rem}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.7rem 1.5rem;border-radius:999px;border:2px solid transparent;font-family:var(--head);font-weight:600;font-size:1.05rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease}
-.btn-sun{background:linear-gradient(135deg,var(--sun),var(--ember));color:#2b1400}
-.btn-sun:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(255,138,31,.8)}
-.btn-line{border-color:rgba(255,255,255,.75);color:#fff}
-.btn-line:hover{background:rgba(255,255,255,.14)}
-.btn-azul{background:var(--azul);color:#fff}
-.btn-azul:hover{background:var(--azul-deep)}
-.btn-sm{min-height:2.6rem;padding:.4rem 1.2rem;font-size:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.7rem 1.6rem;border-radius:999px;border:2px solid transparent;font-family:var(--text);font-weight:700;font-size:1.05rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color .15s ease,color .15s ease,transform .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-sol{background:var(--sol);color:var(--noche)}
+.btn-sol:hover{background:#ffc94d}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ultra)}
+.btn-noche{background:var(--noche);color:#fff}
+.btn-noche:hover{background:var(--ultra)}
+.btn-sm{min-height:2.6rem;padding:.4rem 1.2rem;font-size:.98rem}
+.btn[disabled]{opacity:.6;cursor:default}
 
-/* Logo mark */
-.mark{flex:none;width:1.75rem;height:2.7rem;overflow:visible;--azul-paint:url(#azulGrad)}
-.mark .arc-sun,.mark .arc-azul{fill:none;stroke-width:8;stroke-linecap:butt}
-.mark .arc-sun{stroke:url(#sunGrad)}
-.mark .arc-azul{stroke:var(--azul-paint)}
-.mark .dot-sun{fill:url(#sunGrad)}
-.mark .dot-azul{fill:var(--azul-paint)}
-.on-dark .mark{--azul-paint:url(#azulGradLight)}
-.brand{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none}
-.wordmark{display:flex;flex-direction:column;font-family:var(--head);line-height:1}
-.wordmark b{font-size:1.5rem;font-weight:700;letter-spacing:-.025em}
-.wordmark span{margin-top:.25rem;font-size:.8rem;font-weight:500;letter-spacing:.07em;color:var(--muted)}
-.on-dark .wordmark span{color:#c6d2f5}
+/* Logo */
+.mark{flex:none;width:3rem;height:3rem;margin-block:-.25rem}
+.brand{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark b{font-family:var(--display);font-size:1.5rem;font-weight:800;font-stretch:125%;letter-spacing:-.02em}
+.wordmark span{margin-top:.3rem;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:#c6d2f5}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(246,249,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.header-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;min-height:4.4rem}
+.site-header{position:sticky;top:0;z-index:50;background:var(--ultra);color:#fff;border-bottom:1px solid rgba(255,255,255,.14);--focus:var(--sol)}
+.header-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;min-height:4.5rem}
 .site-nav{width:100%}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:center}
-.site-nav a:not(.btn){font-family:var(--head);font-weight:500;font-size:1rem;text-decoration:none}
-.site-nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:.35em;text-decoration-thickness:2px}
-.nav-toggle{display:none;align-items:center;gap:.5rem;min-height:2.75rem;padding:.4rem .9rem;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font-family:var(--head);font-weight:600;font-size:1rem;cursor:pointer}
+.site-nav a:not(.btn){font-weight:500;text-decoration:none}
+.site-nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:.35em;text-decoration-thickness:2px;text-decoration-color:var(--sol)}
+.nav-toggle{display:none;align-items:center;gap:.5rem;min-height:2.75rem;padding:.4rem .95rem;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;background:transparent;color:#fff;font:inherit;font-weight:600;cursor:pointer}
 .nav-toggle .bars{width:1.1rem;height:.8rem;position:relative}
 .nav-toggle .bars::before,.nav-toggle .bars::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,top .2s ease}
 .nav-toggle .bars::before{top:0}
 .nav-toggle .bars::after{top:100%}
 .site-header[data-open="true"] .nav-toggle .bars::before{top:50%;transform:rotate(45deg)}
 .site-header[data-open="true"] .nav-toggle .bars::after{top:50%;transform:rotate(-45deg)}
-
 @media (max-width:59.99rem){
   .js .nav-toggle{display:inline-flex}
-  .js .site-nav{display:none;position:absolute;left:0;right:0;top:100%;width:auto;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem var(--gutter) 1.5rem}
+  .js .site-nav{display:none;position:absolute;left:0;right:0;top:100%;width:auto;background:var(--ultra);border-bottom:1px solid rgba(255,255,255,.14);padding:.5rem var(--gutter) 1.5rem}
   .js .site-header[data-open="true"] .site-nav{display:block}
   .js .site-nav ul{flex-direction:column;align-items:stretch;gap:0}
-  .js .site-nav li a:not(.btn){display:block;padding:.9rem 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+  .js .site-nav li a:not(.btn){display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:1.1rem}
   .js .site-nav li:last-child{margin-top:1rem}
   .js .site-nav li:last-child .btn{width:100%}
 }
 @media (min-width:60rem){
   .site-nav{width:auto}
-  .site-nav ul{gap:0 1.75rem}
+  .site-nav ul{gap:0 1.9rem}
 }
 
-/* Hero */
-.hero{background:var(--azul);color:#fff;overflow:hidden}
-.hero-grid{display:grid;gap:2.5rem;align-items:center;padding-block:clamp(2.5rem,7vw,5.5rem)}
-.hero h1{font-size:clamp(2.45rem, 1.2rem + 4.2vw, 4.2rem);line-height:1.02;letter-spacing:-.03em;font-weight:700;margin-bottom:1.4rem}
-.hero .lede{max-width:34rem;margin-bottom:2rem;font-size:clamp(1.1rem, 1rem + .5vw, 1.3rem);color:rgba(255,255,255,.9)}
+/* Language switcher */
+.lang{display:flex;align-items:center;gap:.2rem}
+.lang-btn{display:grid;place-items:center;width:2.6rem;height:2.6rem;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;opacity:.55;transition:opacity .15s ease}
+.lang-btn:hover{opacity:1}
+.lang-btn[aria-pressed="true"]{opacity:1}
+.flag{display:block;width:1.65rem;height:1.65rem;border-radius:50%;box-shadow:0 0 0 1.5px rgba(255,255,255,.35)}
+.lang-btn[aria-pressed="true"] .flag{box-shadow:0 0 0 2px var(--ultra),0 0 0 4px var(--sol)}
+.site-footer .lang-btn[aria-pressed="true"] .flag{box-shadow:0 0 0 2px var(--noche),0 0 0 4px var(--sol)}
+.brand{order:0}
+.site-header .lang{order:1;margin-left:auto}
+.nav-toggle{order:2}
+.site-nav{order:3}
+@media (min-width:60rem){
+  .site-nav{order:1;margin-left:auto}
+  .site-header .lang{order:2;margin-left:.75rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,.2)}
+}
+
+@media (max-width:29.99rem){
+  .header-row{gap:.5rem}
+  .js .nav-toggle{width:2.75rem;padding:0;justify-content:center}
+  .nav-toggle .nav-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .lang-btn{width:2.35rem;height:2.35rem}
+  .flag{width:1.5rem;height:1.5rem}
+  .wordmark b{font-size:1.35rem}
+  .brand{gap:.5rem}
+  .mark{width:2.5rem;height:2.5rem}
+  .lang{gap:0}
+}
+
+/* Hero: the sun rises over a horizon of tiles */
+.hero{
+  --band:clamp(4.5rem,15vh,8.5rem);
+  --sun:clamp(15rem,38vw,38rem);
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--ultra);color:#fff;
+  min-height:clamp(38rem,88svh,60rem);
+  display:flex;align-items:center;
+  --focus:var(--sol);
+}
+.sun{
+  position:absolute;z-index:-1;
+  right:calc(var(--sun) * -0.12);
+  bottom:calc(var(--band) - var(--sun) / 2);
+  width:var(--sun);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 20%,#ffe07a 0%,var(--sol) 42%,var(--brasa) 100%);
+  box-shadow:0 0 90px 30px rgba(255,150,30,.32),0 0 260px 90px rgba(255,120,20,.16);
+}
+.js .sun{animation:rise 2.2s cubic-bezier(.2,.75,.2,1) .2s both}
+@keyframes rise{
+  from{transform:translateY(42%) scale(.94);filter:saturate(.6) brightness(.8)}
+  to{transform:none;filter:none}
+}
+.horizon{
+  position:absolute;z-index:-1;left:0;right:0;bottom:0;height:var(--band);
+  background-color:var(--ultra-deep);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' fill='none' stroke='%23ffffff' stroke-opacity='.16' stroke-width='1.2'%3E%3Cpath d='M28 0A28 28 0 0 0 0 28M28 0A28 28 0 0 1 56 28M0 28A28 28 0 0 0 28 56M56 28A28 28 0 0 1 28 56'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3Crect x='.5' y='.5' width='55' height='55' stroke-opacity='.08'/%3E%3C/svg%3E");
+  background-size:56px 56px;background-position:center top;
+  border-top:1.5px solid rgba(255,196,80,.85);
+  box-shadow:0 -2px 30px rgba(255,140,30,.35);
+}
+.hero-inner{position:relative;width:100%;padding-block:clamp(3rem,7vw,5rem) calc(var(--band) + 3rem)}
+.hero h1{
+  max-width:13.5em;
+  font-size:clamp(2.5rem,0.9rem + 5.6vw,6.2rem);
+  font-weight:850;font-stretch:128%;
+  line-height:.95;letter-spacing:-.025em;
+  margin-bottom:1.6rem;
+}
+.hero .lede{max-width:33rem;margin-bottom:2.1rem;font-size:clamp(1.1rem,1rem + .45vw,1.3rem);line-height:1.55;color:rgba(255,255,255,.92)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem}
-.hero-note{max-width:30rem;margin-top:1.6rem;font-size:1rem;color:rgba(255,255,255,.8)}
-.hero-art{display:block;width:100%;max-width:36rem;height:auto;margin-inline:auto}
-.hero-art .pill{fill:rgba(15,36,148,.92);stroke:rgba(255,255,255,.55);stroke-width:1.5}
-.hero-art .pill-human{fill:var(--sun);stroke:var(--sun)}
-.hero-art text{font-family:var(--head);font-weight:600;font-size:19px;fill:#fff;text-anchor:middle}
-.hero-art .pill-human + text{fill:#2b1400}
-.hero-art .sun-label{font-size:19px;font-weight:700;fill:#3a1b00}
+.hero-note{max-width:30rem;margin-top:1.6rem;font-size:1rem;color:rgba(255,255,255,.82)}
 @media (min-width:60rem){
-  .hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:3rem}
+  .hero h1,.hero .lede,.hero-note{max-width:min(62vw,var(--w,13.5em))}
+  .hero .lede{--w:33rem}
+  .hero-note{--w:30rem}
+}
+@media (max-width:59.99rem){
+  .hero{--sun:clamp(14rem,64vw,22rem);align-items:flex-start}
+  .hero h1{font-stretch:112%}
+  .hero-inner{padding-bottom:calc(var(--band) + var(--sun) * .5 + 2.5rem)}
+  .sun{right:50%;margin-right:calc(var(--sun) / -2)}
 }
 
-/* Services */
-.split{display:grid;gap:2.5rem}
-.split-intro p{margin-top:1.1rem;color:var(--muted);max-width:30rem}
-.service-list{list-style:none;margin:0;padding:0}
-.service-list li{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;padding-block:1.6rem;border-top:1px solid var(--line)}
-.service-list li:last-child{border-bottom:1px solid var(--line)}
-.service-list h3{margin-bottom:.35rem}
-.service-list p{color:var(--muted);max-width:36rem}
-.icon{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--mist);color:var(--azul)}
-.icon svg{width:1.5rem;height:1.5rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-@media (min-width:60rem){
-  .split{grid-template-columns:5fr 7fr;gap:4rem}
-  .split-intro{position:sticky;top:6.5rem;align-self:start}
-  .service-list li:first-child{border-top:0;padding-top:0}
+/* Services: a typographic index */
+.services-head{display:grid;gap:1.25rem;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.services-head p{color:var(--muted);font-size:1.125rem;max-width:34rem}
+.index{list-style:none;margin:0;padding:0;border-top:2px solid var(--noche)}
+.index li{display:grid;gap:.5rem 2.5rem;padding-block:1.6rem;border-bottom:1px solid var(--line)}
+.index h3{font-size:clamp(1.4rem,1rem + 1.3vw,2rem);font-weight:750;font-stretch:115%;letter-spacing:-.01em;line-height:1.08}
+.index p{color:var(--muted);max-width:36rem}
+@media (min-width:56rem){
+  .services-head{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end;gap:3rem}
+  .index li{grid-template-columns:minmax(0,6fr) minmax(0,6fr);align-items:baseline;padding-block:1.9rem}
 }
 
-/* Workflow */
-.flow{--g:1.5rem;list-style:none;margin:3rem 0 0;padding:0;display:grid;gap:1.9rem;position:relative;max-width:44rem}
-.flow::before,.flow::after{content:"";position:absolute;left:.85rem;top:.85rem;bottom:.85rem;width:3px;margin-left:-1.5px;border-radius:2px;background:var(--line)}
-.flow::after{background:var(--azul);transform-origin:top}
-.flow-step{position:relative;padding-left:3rem}
-.flow-step::before{content:"";position:absolute;left:0;top:.05rem;width:1.7rem;height:1.7rem;border-radius:50%;border:3px solid var(--azul);background:var(--azul)}
-.flow-step.is-human::before{background:var(--sun);border-color:var(--sun);box-shadow:0 0 0 4px rgba(255,194,51,.35)}
-.flow-step h3{margin-bottom:.3rem}
-.flow-step p{color:var(--muted);font-size:1rem;line-height:1.55}
-.js .flow:not(.is-live)::after{transform:scaleY(0)}
-.js .flow:not(.is-live) .flow-step::before{background:var(--mist)}
-.js .flow::after{transition:transform 2.6s ease-in-out}
-.js .flow-step::before{transition:background-color .4s ease,border-color .4s ease,box-shadow .4s ease;transition-delay:calc(var(--i) * .55s)}
-@media (min-width:72rem){
-  .flow{max-width:none;grid-template-columns:repeat(5,1fr);gap:var(--g)}
-  .flow::before,.flow::after{left:.85rem;right:calc((100% - 4 * var(--g)) / 5 - .85rem);top:.85rem;bottom:auto;width:auto;height:3px;margin:-1.5px 0 0}
-  .flow::after{transform-origin:left}
-  .js .flow:not(.is-live)::after{transform:scaleX(0)}
-  .flow-step{padding-left:0;padding-top:2.7rem}
-}
-
-/* Process */
-.steps{list-style:none;margin:3rem 0 0;padding:0;display:grid;gap:2.25rem}
-.step{padding-left:1.25rem;border-left:3px solid var(--sun)}
-.step-n{display:block;margin-bottom:.6rem;font-family:var(--head);font-weight:700;font-size:3.25rem;line-height:1;letter-spacing:-.03em;color:var(--azul)}
-.step h3{margin-bottom:.4rem}
-.step p{color:var(--muted);font-size:1.05rem}
-@media (min-width:42rem){.steps{grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem}}
-@media (min-width:64rem){.steps{grid-template-columns:repeat(4,1fr)}}
-
-/* Examples */
-.cases{display:grid;gap:1.25rem;margin-top:3rem}
-.case{padding:1.6rem;border:1px solid var(--line);border-radius:14px;background:#fff}
-.case h3{margin-bottom:1rem}
-.case dl{margin:0;display:grid;gap:.9rem}
-.case dt{font-family:var(--head);font-weight:600;font-size:.95rem;color:var(--muted)}
-.case dd{margin:.1rem 0 0;font-size:1.05rem;line-height:1.5}
-.case-lead{border:0;border-radius:26px;background:var(--azul);color:#fff;padding:clamp(1.6rem,4vw,2.5rem)}
-.case-lead h3{font-size:clamp(1.5rem, 1.1rem + 1.4vw, 2rem);line-height:1.1;letter-spacing:-.015em}
-.case-lead dt{color:#cfe0ff}
-.case-lead dd{font-size:1.15rem}
-@media (min-width:44rem){
-  .cases{grid-template-columns:repeat(2,1fr)}
-  .case-lead{grid-column:1 / -1}
+/* Our work: Athena */
+.work{background:var(--noche);color:#fff;--focus:var(--sol)}
+.work-head{display:grid;gap:1.25rem}
+.work-head p{color:#b3bfec;font-size:1.125rem;max-width:36rem}
+.work-body{display:grid;gap:clamp(2.5rem,5vw,3.5rem);margin-top:clamp(2.5rem,5vw,3.5rem);align-items:center}
+.shot{margin:0;max-width:calc(776px + 2.5rem);padding:clamp(.75rem,2vw,1.25rem);border-radius:22px;background:#0b1a33;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 1px rgba(255,184,28,.18),0 40px 90px -40px rgba(26,47,209,.9)}
+.shot img{display:block;width:100%;max-width:776px;height:auto;margin-inline:auto;border-radius:12px}
+.work-facts{list-style:none;margin:0;padding:0;display:grid;gap:2rem}
+.work-facts li{padding-left:1.25rem;border-left:3px solid var(--sol)}
+.work-facts h3{margin-bottom:.4rem;font-size:1.25rem;color:#fff}
+.work-facts p{color:#b3bfec}
+@media (min-width:56rem){
+  .work-head{grid-template-columns:minmax(0,6fr) minmax(0,6fr);align-items:end;gap:3rem}
 }
 @media (min-width:64rem){
-  .cases{grid-template-columns:1.05fr 1fr 1fr;grid-auto-rows:1fr}
-  .case-lead{grid-column:1;grid-row:1 / span 2}
+  .work-body{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:4rem}
+  .work-facts{gap:2.25rem}
+}
+
+/* Process: a real sequence, so it is numbered */
+.steps{list-style:none;margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0;display:grid;gap:2.5rem}
+.step{padding-top:1.1rem;border-top:3px solid var(--sol)}
+.step-n{display:block;margin-bottom:.9rem;font-family:var(--display);font-weight:850;font-stretch:150%;font-size:clamp(3rem,2rem + 3vw,4.6rem);line-height:.9;letter-spacing:-.04em;color:var(--ultra)}
+.step h3{margin-bottom:.45rem;font-size:1.35rem}
+.step p{color:var(--muted)}
+@media (min-width:42rem){.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 2.5rem}}
+@media (min-width:68rem){.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:2.5rem}}
+
+/* Examples: today versus with agents */
+.examples{background:var(--niebla)}
+.cases{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--noche)}
+.cases-key{display:none}
+.case{display:grid;gap:.9rem;padding-block:1.6rem;border-bottom:1px solid #b9c4ee}
+.case h3{font-size:clamp(1.3rem,1rem + 1vw,1.75rem);font-weight:750;font-stretch:112%;line-height:1.1}
+.case dl{margin:0;display:grid;gap:.9rem}
+.case dt{font-weight:700;font-size:.92rem;color:var(--muted)}
+.case dd{margin:.15rem 0 0}
+.case dd.after{color:var(--ultra);font-weight:500}
+@media (min-width:56rem){
+  .cases-key,.case{grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,5fr);gap:2.5rem}
+  .cases-key{display:grid;padding-block:.9rem;border-bottom:1px solid #b9c4ee;font-weight:700;color:var(--muted)}
+  .cases-key span:first-child{visibility:hidden}
+  .case{padding-block:1.9rem;align-items:baseline}
+  .case dl{grid-column:2 / span 2;grid-template-columns:subgrid;gap:2.5rem}
+  .case dl > div{display:contents}
+  .case dt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .case dd{margin:0}
 }
 
 /* Principles */
+.principles-grid{display:grid;gap:2.5rem}
+.principles-grid > div > p{margin-top:1.25rem;color:var(--muted);font-size:1.125rem;max-width:30rem}
 .principles{display:grid;gap:2rem}
-.principle{padding-top:1.4rem;border-top:1px solid var(--line)}
-.principle h3{margin-bottom:.35rem}
-.principle p{color:var(--muted);max-width:36rem}
+.principle{padding-left:1.25rem;border-left:3px solid var(--ultra)}
+.principle h3{margin-bottom:.4rem;font-size:1.3rem}
+.principle p{color:var(--muted);max-width:34rem}
 @media (min-width:60rem){
-  .principle:first-child{border-top:0;padding-top:0}
+  .principles-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}
+  .principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 2.5rem}
 }
 
-/* Contact */
-.contact{background:var(--azul);color:#fff}
+/* Contact: in full sun */
+.contact{background:var(--sol);color:var(--noche);--focus:var(--noche)}
 .contact-grid{display:grid;gap:2.5rem;align-items:start}
-.contact h2{margin-bottom:1.1rem}
-.contact-copy p{max-width:30rem;color:rgba(255,255,255,.9)}
-.form{padding:clamp(1.4rem,4vw,2.2rem);border-radius:22px;background:#fff;color:var(--ink);--focus:var(--azul)}
+.contact h2{margin-bottom:1.25rem;font-size:clamp(2.4rem,1.2rem + 4vw,4.6rem);font-stretch:128%}
+.contact-copy p{max-width:30rem;font-size:1.15rem}
+.fees{margin:2rem 0 0;max-width:30rem;border-top:2px solid var(--noche)}
+.fees div{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.25rem 1.5rem;padding-block:.95rem;border-bottom:1px solid rgba(7,16,66,.25)}
+.fees dt{font-weight:500}
+.fees dd{margin:0;font-family:var(--display);font-weight:800;font-stretch:115%;font-size:1.35rem;line-height:1.15}
+.form{padding:clamp(1.4rem,4vw,2.2rem);border-radius:20px;background:#fff;border:2px solid var(--noche);--focus:var(--ultra)}
 .field{display:grid;gap:.4rem;margin-bottom:1.1rem}
-.field label{font-family:var(--head);font-weight:600;font-size:1rem}
-.field input,.field textarea{width:100%;min-height:3rem;padding:.75rem .9rem;border:1.5px solid #9fb0e6;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-family:var(--head);font-size:1rem;line-height:1.4}
+.field label{font-weight:700;font-size:1rem}
+.field input,.field textarea{width:100%;min-height:3rem;padding:.75rem .9rem;border:1.5px solid #9fb0e6;border-radius:10px;background:#fff;color:var(--noche);font:inherit;font-size:1rem;line-height:1.4}
 .field textarea{min-height:8.5rem;resize:vertical}
 .field input::placeholder,.field textarea::placeholder{color:#6f7eaf}
-.field input:focus-visible,.field textarea:focus-visible{outline:3px solid var(--azul);outline-offset:1px;border-color:var(--azul)}
+.field input:focus-visible,.field textarea:focus-visible{outline:3px solid var(--ultra);outline-offset:1px;border-color:var(--ultra)}
 .form .btn{width:100%}
 .form-status{margin-top:1rem;font-size:1rem;color:var(--muted)}
 .form-status:empty{display:none}
-.form-status a{font-weight:600}
+.form-status a{font-weight:700}
 @media (min-width:60rem){
-  .contact-grid{grid-template-columns:5fr 6fr;gap:4rem}
+  .contact-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:4rem}
   .form .btn{width:auto}
 }
 
 /* Footer */
-.site-footer{background:var(--ink);color:#c6d2f5;padding-block:2.5rem;--focus:var(--sun)}
+.site-footer{background:var(--noche);color:#c6d2f5;padding-block:2.75rem;--focus:var(--sol)}
 .footer-row{display:flex;flex-wrap:wrap;gap:1.5rem 2rem;align-items:center;justify-content:space-between}
-.site-footer .wordmark b{color:#fff}
-.footer-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:var(--head)}
+.footer-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
 .footer-links a{text-decoration:none}
-.footer-links a:hover{text-decoration:underline;text-underline-offset:.3em}
+.footer-links a:hover{text-decoration:underline;text-underline-offset:.3em;color:#fff}
 .legal{width:100%;margin-top:.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.15);font-size:.95rem;color:#a9b9e8}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .js .sun{animation:none}
   *,*::before,*::after{transition-duration:.01ms !important;transition-delay:0s !important}
 }
 </style>
 </head>
 <body>
 
-<!-- Shared gradient for the logo mark -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffd25a"/>
-      <stop offset="1" stop-color="#ff8a1f"/>
+      <stop offset="1" stop-color="#ff7a1a"/>
     </linearGradient>
-    <linearGradient id="azulGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4f8cff"/>
-      <stop offset="1" stop-color="#1b3fd8"/>
+    <linearGradient id="diskGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd65a"/>
+      <stop offset=".55" stop-color="#ffb81c"/>
+      <stop offset="1" stop-color="#ff6a13"/>
     </linearGradient>
-    <linearGradient id="azulGradLight" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9fc0ff"/>
-      <stop offset="1" stop-color="#5b92ff"/>
-    </linearGradient>
+    <clipPath id="diskClip" clipPathUnits="userSpaceOnUse"><circle cx="32" cy="36" r="17"/></clipPath>
   </defs>
+  <!-- Logo mark: an art-deco sun whose lower half dissolves into azul sea stripes -->
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <path d="M12.99 29.66L7.37 29.40L12.37 31.98ZM15.45 24.66L6.02 21.00L13.90 27.34ZM18.71 21.01L13.97 17.97L17.01 22.71ZM23.34 17.90L17.00 10.02L20.66 19.45ZM27.98 16.37L25.40 11.37L25.66 16.99ZM33.55 16.00L32.00 6.00L30.45 16.00ZM38.34 16.99L38.60 11.37L36.02 16.37ZM43.34 19.45L47.00 10.02L40.66 17.90ZM46.99 22.71L50.03 17.97L45.29 21.01ZM50.10 27.34L57.98 21.00L48.55 24.66ZM51.63 31.98L56.63 29.40L51.01 29.66Z" fill="url(#sunGrad)"/>
+    <g clip-path="url(#diskClip)">
+      <rect x="14" y="18" width="36" height="20.6" fill="url(#diskGrad)"/>
+      <rect x="14" y="40.6" width="36" height="3.6" fill="#ff8a3d"/>
+      <rect x="14" y="46.2" width="36" height="3" fill="#c3d4ff"/>
+      <rect x="14" y="51.2" width="36" height="2.8" fill="#8fa6ff"/>
+    </g>
+  </symbol>
+  <!-- Flags for the language switcher (shown cropped to circles) -->
+  <symbol id="flag-gb" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice">
+    <clipPath id="gb-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+    <path d="M0 0v30h60V0z" fill="#012169"/>
+    <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+    <path d="M0 0l60 30m0-30L0 30" clip-path="url(#gb-t)" stroke="#C8102E" stroke-width="4"/>
+    <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+    <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+  </symbol>
+  <symbol id="flag-es" viewBox="0 0 750 500" preserveAspectRatio="xMidYMid slice">
+    <rect width="750" height="500" fill="#AA151B"/>
+    <rect y="125" width="750" height="250" fill="#F1BF00"/>
+  </symbol>
+  <symbol id="flag-pt" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+    <rect width="600" height="400" fill="#DA291C"/>
+    <rect width="240" height="400" fill="#046A38"/>
+    <circle cx="240" cy="200" r="70" fill="none" stroke="#FFE900" stroke-width="20"/>
+    <path d="M212 160h56v50a28 28 0 0 1-56 0z" fill="#fff" stroke="#DA291C" stroke-width="8"/>
+  </symbol>
 </svg>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-t>Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="#top" aria-label="Solazul AI Technology, home">
-      <svg class="mark" viewBox="12 0 40 64" aria-hidden="true" focusable="false">
-        <path class="arc-sun" d="M43.3 12.5A13 13 0 1 0 32 32"/>
-        <path class="arc-azul" d="M32 32A13 13 0 1 1 20.7 51.5"/>
-        <circle class="dot-sun" cx="43.3" cy="12.5" r="7"/>
-        <circle class="dot-azul" cx="20.7" cy="51.5" r="5.5"/>
-      </svg>
-      <span class="wordmark"><b>Solazul</b><span>AI Technology</span></span>
+    <a class="brand" href="#top" aria-label="Solazul AI Consultants, home" data-t-attr="aria-label">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+      <span class="wordmark"><b>Solazul</b><span>AI Consultants</span></span>
     </a>
+
+    <div class="lang" role="group" aria-label="Language" data-t-attr="aria-label">
+      <button class="lang-btn" type="button" data-lang="en" aria-pressed="true" title="English"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-gb"/></svg><span class="sr-only" lang="en">English</span></button>
+      <button class="lang-btn" type="button" data-lang="es" aria-pressed="false" title="Español"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-es"/></svg><span class="sr-only" lang="es">Español</span></button>
+      <button class="lang-btn" type="button" data-lang="pt" aria-pressed="false" title="Português"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-pt"/></svg><span class="sr-only" lang="pt">Português</span></button>
+    </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="bars" aria-hidden="true"></span>
-      <span>Menu</span>
+      <span class="nav-label" data-t>Menu</span>
     </button>
 
-    <nav class="site-nav" id="site-nav" aria-label="Main">
+    <nav class="site-nav" id="site-nav" aria-label="Main" data-t-attr="aria-label">
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#workflow">How agents work</a></li>
-        <li><a href="#process">Our process</a></li>
-        <li><a href="#examples">Examples</a></li>
-        <li><a class="btn btn-azul btn-sm" href="#contact">Get in touch</a></li>
+        <li><a href="#services" data-t>Services</a></li>
+        <li><a href="#work" data-t>Our work</a></li>
+        <li><a href="#process" data-t>Our process</a></li>
+        <li><a href="#examples" data-t>Examples</a></li>
+        <li><a class="btn btn-sol btn-sm" href="#contact" data-t>Get in touch</a></li>
       </ul>
     </nav>
   </div>
@@ -287,263 +380,167 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
 
 <main id="main">
 
-  <section class="hero on-azul" aria-labelledby="hero-title">
-    <div class="wrap hero-grid">
-      <div>
-        <h1 id="hero-title">AI agents that take the routine work off your team</h1>
-        <p class="lede">Solazul AI Technology designs and builds teams of AI agents and automated workflows that run your repetitive business processes, so your people can focus on the work that needs them.</p>
-        <div class="hero-actions">
-          <a class="btn btn-sun" href="#contact">Get in touch</a>
-          <a class="btn btn-line" href="#examples">See what we build</a>
-        </div>
-        <p class="hero-note">Tell us one process that slows you down. We'll say honestly whether an agent can take it on.</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="horizon" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <h1 id="hero-title" data-t>AI agents that take the routine work off your team</h1>
+      <p class="lede" data-t>We design and build teams of AI agents and automated workflows that run your repetitive business processes, so your people can focus on the work that needs them.</p>
+      <div class="hero-actions">
+        <a class="btn btn-sol" href="#contact" data-t>Get in touch</a>
+        <a class="btn btn-ghost" href="#work" data-t>See an agent we built</a>
       </div>
-
-      <svg class="hero-art" viewBox="0 0 560 500" role="img" aria-labelledby="art-title art-desc">
-        <title id="art-title">AI agents working around your workflow</title>
-        <desc id="art-desc">A sun labelled "Your workflow" sits at the centre. Four agents orbit it: Intake agent, Research agent, Drafting agent and Human review.</desc>
-        <defs>
-          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#ffc233" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#ffc233" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="heroSun" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ffd25a"/>
-            <stop offset="1" stop-color="#ff8a1f"/>
-          </linearGradient>
-        </defs>
-
-        <circle cx="280" cy="250" r="200" fill="url(#glow)"/>
-
-        <path id="orbitA" d="M103.4 343.9A200 72 -28 0 1 456.6 156.1A200 72 -28 0 1 103.4 343.9Z" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.5"/>
-        <path id="orbitB" d="M80.7 169.5A215 95 22 0 1 479.3 330.5A215 95 22 0 1 80.7 169.5Z" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.5"/>
-
-        <!-- Work moving between agents -->
-        <circle r="5" fill="#ffd25a">
-          <animateMotion dur="42s" repeatCount="indefinite"><mpath href="#orbitA"/></animateMotion>
-        </circle>
-        <circle r="5" fill="#ffd25a">
-          <animateMotion dur="42s" begin="-21s" repeatCount="indefinite"><mpath href="#orbitA"/></animateMotion>
-        </circle>
-        <circle r="5" fill="#fff">
-          <animateMotion dur="56s" repeatCount="indefinite"><mpath href="#orbitB"/></animateMotion>
-        </circle>
-        <circle r="5" fill="#fff">
-          <animateMotion dur="56s" begin="-28s" repeatCount="indefinite"><mpath href="#orbitB"/></animateMotion>
-        </circle>
-
-        <circle cx="280" cy="250" r="72" fill="url(#heroSun)"/>
-        <text class="sun-label" x="280" y="246">Your</text>
-        <text class="sun-label" x="280" y="270">workflow</text>
-
-        <rect class="pill" x="32" y="297" width="140" height="38" rx="19"/>
-        <text x="102" y="322">Intake agent</text>
-
-        <rect class="pill" x="354" y="121" width="160" height="38" rx="19"/>
-        <text x="434" y="146">Research agent</text>
-
-        <rect class="pill" x="356" y="345" width="158" height="38" rx="19"/>
-        <text x="435" y="370">Drafting agent</text>
-
-        <rect class="pill pill-human" x="18" y="199" width="148" height="38" rx="19"/>
-        <text x="92" y="224">Human review</text>
-      </svg>
+      <p class="hero-note" data-t>Tell us one process that slows you down. We'll say honestly whether an agent can take it on.</p>
     </div>
   </section>
 
   <section class="section" id="services" aria-labelledby="services-title">
-    <div class="wrap split">
-      <div class="split-intro">
-        <h2 id="services-title">From a single agent to a coordinated team</h2>
-        <p>Every project starts with one process that costs your team time. We build the agents and workflows that take it on, and stay on to keep them working well.</p>
+    <div class="wrap">
+      <div class="services-head">
+        <h2 id="services-title" data-t>From a single agent to a coordinated team</h2>
+        <p data-t>Every project starts with one process that costs your team time. We build the agents and workflows that take it on, and stay on to keep them working well.</p>
       </div>
 
-      <ul class="service-list">
+      <ul class="index">
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="9.5" ry="4" transform="rotate(-28 12 12)"/></svg></span>
-          <div>
-            <h3>AI agents built for one job</h3>
-            <p>Agents that read, decide and act inside the tools you already use: email, spreadsheets, your CRM, ticketing and internal systems.</p>
-          </div>
+          <h3 data-t>AI agents built for one job</h3>
+          <p data-t>Agents that read, decide and act inside the tools you already use: email, spreadsheets, your CRM, ticketing and internal systems.</p>
         </li>
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="2.5"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M10.9 7.7 6.7 15.3M13.1 7.7l4.2 7.6M8 17.5h8"/></svg></span>
-          <div>
-            <h3>Multi-agent workflows</h3>
-            <p>Several agents with different roles, such as triage, research, drafting and checking, coordinated with clear hand-offs and a person in the loop where it matters.</p>
-          </div>
+          <h3 data-t>Multi-agent workflows</h3>
+          <p data-t>Several agents with different roles, such as triage, research, drafting and checking, coordinated with clear hand-offs and a person in the loop where it matters.</p>
         </li>
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="8" width="7.5" height="8" rx="2"/><rect x="14" y="8" width="7.5" height="8" rx="2"/><path d="M10 12h4"/></svg></span>
-          <div>
-            <h3>Process automation and integrations</h3>
-            <p>Connections between your systems so data moves without copy and paste, including the older systems that don't offer an easy integration.</p>
-          </div>
+          <h3 data-t>Process automation and integrations</h3>
+          <p data-t>Connections between your systems so data moves without copy and paste, including the older systems that don't offer an easy integration.</p>
         </li>
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9.5 12.5h5M9.5 16h5"/></svg></span>
-          <div>
-            <h3>Document and knowledge assistants</h3>
-            <p>Agents that read contracts, invoices and policies, and answer questions from your own documents while showing which one they used.</p>
-          </div>
+          <h3 data-t>Document and knowledge assistants</h3>
+          <p data-t>Agents that read contracts, invoices and policies, and answer questions from your own documents while showing which one they used.</p>
         </li>
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h5a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h5"/></svg></span>
-          <div>
-            <h3>Process review and AI roadmap</h3>
-            <p>A short review of where time is lost, which tasks suit AI, and what each would save, so you choose what to build before you spend on it.</p>
-          </div>
+          <h3 data-t>Process review and AI roadmap</h3>
+          <p data-t>A short review of where time is lost, which tasks suit AI, and what each would save, so you choose what to build before you spend on it.</p>
         </li>
         <li>
-          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6h5"/></svg></span>
-          <div>
-            <h3>Monitoring and support</h3>
-            <p>Logs, reports and review steps, plus ongoing tuning so your agents stay accurate as your business changes.</p>
-          </div>
+          <h3 data-t>Monitoring and support</h3>
+          <p data-t>Logs, reports and review steps, plus ongoing tuning so your agents stay accurate as your business changes.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <section class="section band" id="workflow" aria-labelledby="workflow-title">
+  <section class="section work" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="workflow-title">How several agents work on one task</h2>
-        <p>An example: a customer email, handled from first read to logged reply. Your workflows will differ, but the pattern is the same. Each agent has one job, and a person decides where it matters.</p>
+      <div class="work-head">
+        <h2 id="work-title" data-t>Athena, a property research agent we built</h2>
+        <p data-t>Athena coordinates ten specialist agents to research property in Spain. Ask about a place and each specialist covers one area, from listings and rental yield to safety, transport and climate. The Report Composer then brings their findings together in one report.</p>
       </div>
 
-      <ol class="flow" id="flow">
-        <li class="flow-step" style="--i:0">
-          <h3>Triage agent</h3>
-          <p>Reads each new email, form or chat message and works out what the customer needs and how urgent it is.</p>
+      <div class="work-body">
+      <figure class="shot">
+        <img src="images/athena-agent.webp" width="776" height="572" decoding="async"
+             alt="Athena Agent at the centre of a ring of ten specialist agents: Listings Scout, Yield Analyst, Short-let Analyst, Amenities Advisor, Transport Advisor, Report Composer, Census Analyst, Growth Estimator, Safety Analyst and Climate Advisor." data-t-attr="alt">
+      </figure>
+
+      <ul class="work-facts">
+        <li>
+          <h3 data-t>One coordinator, ten specialists</h3>
+          <p data-t>Athena hands each part of a question to the agent best placed to answer it.</p>
         </li>
-        <li class="flow-step" style="--i:1">
-          <h3>Research agent</h3>
-          <p>Pulls the customer's history, open orders and the policy that applies.</p>
+        <li>
+          <h3 data-t>Areas and individual properties</h3>
+          <p data-t>Research a whole location, or dig into specific listings and what they could earn.</p>
         </li>
-        <li class="flow-step" style="--i:2">
-          <h3>Drafting agent</h3>
-          <p>Writes a reply in your tone, with every fact checked against what the research agent found.</p>
+        <li>
+          <h3 data-t>One clear report</h3>
+          <p data-t>Every finding ends up in a single document you can read and share.</p>
         </li>
-        <li class="flow-step is-human" style="--i:3">
-          <h3>Your team approves</h3>
-          <p>You choose which replies send on their own and which wait for a person to review.</p>
-        </li>
-        <li class="flow-step" style="--i:4">
-          <h3>Sent and logged</h3>
-          <p>The reply goes out and your CRM updates. Nothing is left to copy across.</p>
-        </li>
-      </ol>
+      </ul>
+      </div>
     </div>
   </section>
 
   <section class="section" id="process" aria-labelledby="process-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="process-title">How we work together</h2>
-        <p>We start small, show working results early, and only scale up what proves its value.</p>
+        <h2 id="process-title" data-t>How we work together</h2>
+        <p data-t>We start small, show working results early, and only scale up what proves its value.</p>
       </div>
 
       <ol class="steps">
         <li class="step">
           <span class="step-n" aria-hidden="true">1</span>
-          <h3>Discover</h3>
-          <p>We map one process from start to finish: who does what, in which tools, and where the time goes. You get a clear view of what an agent can take on.</p>
+          <h3 data-t>Discover</h3>
+          <p data-t>We map one process from start to finish: who does what, in which tools, and where the time goes. You get a clear view of what an agent can take on.</p>
         </li>
         <li class="step">
           <span class="step-n" aria-hidden="true">2</span>
-          <h3>Design</h3>
-          <p>We agree each agent's role, the checks in place, and where a person stays in the loop. You see the plan and the expected savings before we build.</p>
+          <h3 data-t>Design</h3>
+          <p data-t>We agree each agent's role, the checks in place, and where a person stays in the loop. You see the plan and the expected savings before we build.</p>
         </li>
         <li class="step">
           <span class="step-n" aria-hidden="true">3</span>
-          <h3>Build</h3>
-          <p>We build and test on your real cases in small steps, so you see it working early and can change direction.</p>
+          <h3 data-t>Build</h3>
+          <p data-t>We build and test on your real cases in small steps, so you see it working early and can change direction.</p>
         </li>
         <li class="step">
           <span class="step-n" aria-hidden="true">4</span>
-          <h3>Run</h3>
-          <p>We launch, watch the results and keep improving. You get reports on time saved and accuracy, not just a hand-over.</p>
+          <h3 data-t>Run</h3>
+          <p data-t>We launch, watch the results and keep improving. You get reports on time saved and accuracy, not just a hand-over.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="section band" id="examples" aria-labelledby="examples-title">
+  <section class="section examples" id="examples" aria-labelledby="examples-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="examples-title">Examples of agents we build</h2>
-        <p>Illustrations of the kind of work agents can take on. Yours will be shaped around your own processes and tools.</p>
+        <h2 id="examples-title" data-t>Work agents can take on</h2>
+        <p data-t>Examples of the kind of processes we build for. Yours will be shaped around your own tools and the way your team works.</p>
       </div>
 
       <div class="cases">
-        <article class="case case-lead">
-          <h3>Customer support triage</h3>
+        <div class="cases-key" aria-hidden="true"><span data-t>Process</span><span data-t>Today</span><span data-t>With agents</span></div>
+
+        <article class="case">
+          <h3 data-t>Customer support triage</h3>
           <dl>
-            <div>
-              <dt>Today</dt>
-              <dd>A person reads every incoming message, looks up the account, searches for the right policy and types a reply.</dd>
-            </div>
-            <div>
-              <dt>With agents</dt>
-              <dd>Agents sort each request, gather the account details and draft a reply. A person approves the exceptions and anything sensitive.</dd>
-            </div>
+            <div><dt data-t>Today</dt><dd data-t>A person reads every incoming message, looks up the account, searches for the right policy and types a reply.</dd></div>
+            <div><dt data-t>With agents</dt><dd class="after" data-t>Agents sort each request, gather the account details and draft a reply. A person approves the exceptions and anything sensitive.</dd></div>
           </dl>
         </article>
 
         <article class="case">
-          <h3>Invoice and document processing</h3>
+          <h3 data-t>Invoice and document processing</h3>
           <dl>
-            <div>
-              <dt>Today</dt>
-              <dd>Staff retype details from invoices and contracts into your finance or case system.</dd>
-            </div>
-            <div>
-              <dt>With agents</dt>
-              <dd>An agent extracts the fields, checks them against your rules and flags anything that looks wrong.</dd>
-            </div>
+            <div><dt data-t>Today</dt><dd data-t>Staff retype details from invoices and contracts into your finance or case system.</dd></div>
+            <div><dt data-t>With agents</dt><dd class="after" data-t>An agent extracts the fields, checks them against your rules and flags anything that looks wrong.</dd></div>
           </dl>
         </article>
 
         <article class="case">
-          <h3>Lead qualification and follow-up</h3>
+          <h3 data-t>Lead qualification and follow-up</h3>
           <dl>
-            <div>
-              <dt>Today</dt>
-              <dd>New enquiries wait until someone has time to research the company and reply.</dd>
-            </div>
-            <div>
-              <dt>With agents</dt>
-              <dd>Agents research each lead, score it against your criteria and draft a personal first reply.</dd>
-            </div>
+            <div><dt data-t>Today</dt><dd data-t>New enquiries wait until someone has time to research the company and reply.</dd></div>
+            <div><dt data-t>With agents</dt><dd class="after" data-t>Agents research each lead, score it against your criteria and draft a personal first reply.</dd></div>
           </dl>
         </article>
 
         <article class="case">
-          <h3>Regular reporting</h3>
+          <h3 data-t>Regular reporting</h3>
           <dl>
-            <div>
-              <dt>Today</dt>
-              <dd>Every week someone pulls figures from several tools into one report.</dd>
-            </div>
-            <div>
-              <dt>With agents</dt>
-              <dd>An agent gathers the data, writes the summary and sends it with the numbers checked.</dd>
-            </div>
+            <div><dt data-t>Today</dt><dd data-t>Every week someone pulls figures from several tools into one report.</dd></div>
+            <div><dt data-t>With agents</dt><dd class="after" data-t>An agent gathers the data, writes the summary and sends it with the numbers checked.</dd></div>
           </dl>
         </article>
 
         <article class="case">
-          <h3>Internal knowledge assistant</h3>
+          <h3 data-t>Internal knowledge assistant</h3>
           <dl>
-            <div>
-              <dt>Today</dt>
-              <dd>Staff ask colleagues where a policy or procedure lives.</dd>
-            </div>
-            <div>
-              <dt>With agents</dt>
-              <dd>An assistant answers from your own documents and shows which one it used.</dd>
-            </div>
+            <div><dt data-t>Today</dt><dd data-t>Staff ask colleagues where a policy or procedure lives.</dd></div>
+            <div><dt data-t>With agents</dt><dd class="after" data-t>An assistant answers from your own documents and shows which one it used.</dd></div>
           </dl>
         </article>
       </div>
@@ -551,58 +548,62 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
   </section>
 
   <section class="section" id="principles" aria-labelledby="principles-title">
-    <div class="wrap split">
-      <div class="split-intro">
-        <h2 id="principles-title">How we keep it dependable</h2>
-        <p>Agents are useful when you can trust them. These are the rules we build to.</p>
+    <div class="wrap principles-grid">
+      <div>
+        <h2 id="principles-title" data-t>How we keep it dependable</h2>
+        <p data-t>Agents are useful when you can trust them. These are the rules we build to.</p>
       </div>
 
       <div class="principles">
         <div class="principle">
-          <h3>People stay in control</h3>
-          <p>Agents handle the routine cases and pass the unclear ones to a person. You choose where approval is required.</p>
+          <h3 data-t>People stay in control</h3>
+          <p data-t>Agents handle the routine cases and pass the unclear ones to a person. You choose where approval is required.</p>
         </div>
         <div class="principle">
-          <h3>Built on the tools you have</h3>
-          <p>We connect to your existing email, CRM, documents and databases instead of asking you to switch.</p>
+          <h3 data-t>Built on the tools you have</h3>
+          <p data-t>We connect to your existing email, CRM, documents and databases instead of asking you to switch.</p>
         </div>
         <div class="principle">
-          <h3>Measured against a baseline</h3>
-          <p>We agree what to measure before we build, such as hours spent, error rate and response time, and report against it.</p>
+          <h3 data-t>Measured against a baseline</h3>
+          <p data-t>We agree what to measure before we build, such as hours spent, error rate and response time, and report against it.</p>
         </div>
         <div class="principle">
-          <h3>Careful with your data</h3>
-          <p>We design around your data protection requirements and only use AI providers and hosting you are comfortable with.</p>
+          <h3 data-t>Careful with your data</h3>
+          <p data-t>We design around your data protection requirements and only use AI providers and hosting you are comfortable with.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section contact on-azul" id="contact" aria-labelledby="contact-title">
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap contact-grid">
       <div class="contact-copy">
-        <h2 id="contact-title">Get in touch</h2>
-        <p>Tell us about one process that slows your team down. We'll give you an honest view on whether an agent can take it on, and what a first project could look like.</p>
+        <h2 id="contact-title" data-t>Get in touch</h2>
+        <p data-t>Tell us about one process that slows your team down. We'll give you an honest view on whether an agent can take it on, and what a first project could look like.</p>
+        <dl class="fees">
+          <div><dt data-t>Consultancy</dt><dd data-t>€100 per hour</dd></div>
+          <div><dt data-t>First consultation</dt><dd data-t>First hour free</dd></div>
+        </dl>
       </div>
 
       <form class="form" id="contact-form">
         <div class="field">
-          <label for="name">Your name</label>
+          <label for="name" data-t>Your name</label>
           <input id="name" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="email">Work email</label>
+          <label for="email" data-t>Work email</label>
           <input id="email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="company">Company (optional)</label>
+          <label for="company" data-t>Company (optional)</label>
           <input id="company" name="company" type="text" autocomplete="organization">
         </div>
         <div class="field">
-          <label for="message">What would you like to improve?</label>
-          <textarea id="message" name="message" required placeholder="For example: we answer the same customer questions by email all day."></textarea>
+          <label for="message" data-t>What would you like to improve?</label>
+          <textarea id="message" name="message" required placeholder="For example: we answer the same customer questions by email all day." data-t-attr="placeholder"></textarea>
         </div>
-        <button class="btn btn-azul" type="submit">Send message</button>
+        <button class="btn btn-noche" type="submit" data-t>Send message</button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -610,27 +611,28 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
 
 </main>
 
-<footer class="site-footer on-azul">
-  <div class="wrap footer-row on-dark">
-    <a class="brand" href="#top" aria-label="Solazul AI Technology, back to top">
-      <svg class="mark" viewBox="12 0 40 64" aria-hidden="true" focusable="false">
-        <path class="arc-sun" d="M43.3 12.5A13 13 0 1 0 32 32"/>
-        <path class="arc-azul" d="M32 32A13 13 0 1 1 20.7 51.5"/>
-        <circle class="dot-sun" cx="43.3" cy="12.5" r="7"/>
-        <circle class="dot-azul" cx="20.7" cy="51.5" r="5.5"/>
-      </svg>
-      <span class="wordmark"><b>Solazul</b><span>AI Technology</span></span>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <a class="brand" href="#top" aria-label="Solazul AI Consultants, back to top" data-t-attr="aria-label">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+      <span class="wordmark"><b>Solazul</b><span>AI Consultants</span></span>
     </a>
 
     <ul class="footer-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#workflow">How agents work</a></li>
-      <li><a href="#process">Our process</a></li>
-      <li><a href="#examples">Examples</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#services" data-t>Services</a></li>
+      <li><a href="#work" data-t>Our work</a></li>
+      <li><a href="#process" data-t>Our process</a></li>
+      <li><a href="#examples" data-t>Examples</a></li>
+      <li><a href="#contact" data-t>Contact</a></li>
     </ul>
 
-    <p class="legal">&copy; <span id="year">2026</span> Solazul AI Technology. All rights reserved.</p>
+    <div class="lang" role="group" aria-label="Language" data-t-attr="aria-label">
+      <button class="lang-btn" type="button" data-lang="en" aria-pressed="true" title="English"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-gb"/></svg><span class="sr-only" lang="en">English</span></button>
+      <button class="lang-btn" type="button" data-lang="es" aria-pressed="false" title="Español"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-es"/></svg><span class="sr-only" lang="es">Español</span></button>
+      <button class="lang-btn" type="button" data-lang="pt" aria-pressed="false" title="Português"><svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-pt"/></svg><span class="sr-only" lang="pt">Português</span></button>
+    </div>
+
+    <p class="legal">&copy; <span id="year">2026</span> Solazul AI Consultants. <span data-t>All rights reserved.</span></p>
   </div>
 </footer>
 
@@ -638,16 +640,64 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
 (function () {
   "use strict";
 
-  // Change this one line to your real address. It updates the contact link and the form.
+  // Change this one line to your real address. It updates the contact form.
   var CONTACT_EMAIL = "hello@example.com";
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Contact email
-  document.querySelectorAll("[data-email]").forEach(function (el) {
-    el.textContent = CONTACT_EMAIL;
-    el.setAttribute("href", "mailto:" + CONTACT_EMAIL);
+  // Languages: English is written in the page; Spanish and Portuguese are swapped in here.
+  var I18N = {"es": {"Skip to content": "Saltar al contenido", "Menu": "Menú", "Services": "Servicios", "Our work": "Nuestro trabajo", "Our process": "Nuestro proceso", "Examples": "Ejemplos", "Get in touch": "Contacta con nosotros", "AI agents that take the routine work off your team": "Agentes de IA que liberan a tu equipo del trabajo rutinario", "We design and build teams of AI agents and automated workflows that run your repetitive business processes, so your people can focus on the work that needs them.": "Diseñamos y creamos equipos de agentes de IA y flujos de trabajo automatizados que se ocupan de tus procesos repetitivos, para que tu equipo pueda centrarse en el trabajo que de verdad lo necesita.", "See an agent we built": "Ver un agente que hemos creado", "Tell us one process that slows you down. We'll say honestly whether an agent can take it on.": "Cuéntanos un proceso que te frena. Te diremos con sinceridad si un agente puede encargarse de él.", "From a single agent to a coordinated team": "De un solo agente a un equipo coordinado", "Every project starts with one process that costs your team time. We build the agents and workflows that take it on, and stay on to keep them working well.": "Cada proyecto empieza por un proceso que le cuesta tiempo a tu equipo. Creamos los agentes y flujos que se encargan de él, y seguimos a tu lado para que funcionen bien.", "AI agents built for one job": "Agentes de IA para una tarea concreta", "Agents that read, decide and act inside the tools you already use: email, spreadsheets, your CRM, ticketing and internal systems.": "Agentes que leen, deciden y actúan dentro de las herramientas que ya usas: correo, hojas de cálculo, tu CRM, sistemas de incidencias y sistemas internos.", "Multi-agent workflows": "Flujos de trabajo con varios agentes", "Several agents with different roles, such as triage, research, drafting and checking, coordinated with clear hand-offs and a person in the loop where it matters.": "Varios agentes con funciones distintas, como clasificar, investigar, redactar y revisar, coordinados con traspasos claros y una persona supervisando donde importa.", "Process automation and integrations": "Automatización de procesos e integraciones", "Connections between your systems so data moves without copy and paste, including the older systems that don't offer an easy integration.": "Conexiones entre tus sistemas para que los datos fluyan sin copiar y pegar, incluidos los sistemas antiguos que no ofrecen una integración sencilla.", "Document and knowledge assistants": "Asistentes de documentos y conocimiento", "Agents that read contracts, invoices and policies, and answer questions from your own documents while showing which one they used.": "Agentes que leen contratos, facturas y políticas, y responden preguntas a partir de tus propios documentos indicando cuál han usado.", "Process review and AI roadmap": "Revisión de procesos y hoja de ruta de IA", "A short review of where time is lost, which tasks suit AI, and what each would save, so you choose what to build before you spend on it.": "Una revisión breve de dónde se pierde tiempo, qué tareas se prestan a la IA y cuánto ahorraría cada una, para que decidas qué crear antes de invertir.", "Monitoring and support": "Supervisión y soporte", "Logs, reports and review steps, plus ongoing tuning so your agents stay accurate as your business changes.": "Registros, informes y pasos de revisión, además de ajustes continuos para que tus agentes sigan siendo precisos a medida que cambia tu negocio.", "Athena, a property research agent we built": "Athena, un agente de investigación inmobiliaria creado por nosotros", "Athena coordinates ten specialist agents to research property in Spain. Ask about a place and each specialist covers one area, from listings and rental yield to safety, transport and climate. The Report Composer then brings their findings together in one report.": "Athena coordina diez agentes especializados para investigar inmuebles en España. Pregunta por una zona y cada especialista se ocupa de un aspecto, desde los anuncios y la rentabilidad del alquiler hasta la seguridad, el transporte y el clima. Después, el Report Composer reúne sus conclusiones en un único informe.", "One coordinator, ten specialists": "Un coordinador, diez especialistas", "Athena hands each part of a question to the agent best placed to answer it.": "Athena asigna cada parte de una pregunta al agente más indicado para responderla.", "Areas and individual properties": "Zonas e inmuebles concretos", "Research a whole location, or dig into specific listings and what they could earn.": "Investiga una zona completa o analiza anuncios concretos y lo que podrían rentar.", "One clear report": "Un informe claro", "Every finding ends up in a single document you can read and share.": "Todas las conclusiones acaban en un único documento que puedes leer y compartir.", "How we work together": "Cómo trabajamos juntos", "We start small, show working results early, and only scale up what proves its value.": "Empezamos con poco, mostramos resultados reales pronto y solo ampliamos lo que demuestra su valor.", "Discover": "Descubrir", "We map one process from start to finish: who does what, in which tools, and where the time goes. You get a clear view of what an agent can take on.": "Analizamos un proceso de principio a fin: quién hace qué, con qué herramientas y dónde se va el tiempo. Así ves con claridad qué puede asumir un agente.", "Design": "Diseñar", "We agree each agent's role, the checks in place, and where a person stays in the loop. You see the plan and the expected savings before we build.": "Acordamos la función de cada agente, los controles y dónde interviene una persona. Ves el plan y el ahorro previsto antes de empezar a construir.", "Build": "Construir", "We build and test on your real cases in small steps, so you see it working early and can change direction.": "Construimos y probamos con tus casos reales, paso a paso, para que lo veas funcionar pronto y puedas cambiar de rumbo.", "Run": "Poner en marcha", "We launch, watch the results and keep improving. You get reports on time saved and accuracy, not just a hand-over.": "Lo lanzamos, vigilamos los resultados y seguimos mejorando. Recibes informes sobre el tiempo ahorrado y la precisión, no solo una entrega.", "Work agents can take on": "Trabajo que pueden asumir los agentes", "Examples of the kind of processes we build for. Yours will be shaped around your own tools and the way your team works.": "Ejemplos del tipo de procesos para los que creamos agentes. Los tuyos se adaptarán a tus herramientas y a la forma de trabajar de tu equipo.", "Process": "Proceso", "Today": "Hoy", "With agents": "Con agentes", "Customer support triage": "Clasificación de atención al cliente", "A person reads every incoming message, looks up the account, searches for the right policy and types a reply.": "Una persona lee cada mensaje entrante, busca la cuenta, localiza la política adecuada y escribe una respuesta.", "Agents sort each request, gather the account details and draft a reply. A person approves the exceptions and anything sensitive.": "Los agentes clasifican cada solicitud, reúnen los datos de la cuenta y redactan una respuesta. Una persona aprueba las excepciones y todo lo delicado.", "Invoice and document processing": "Procesamiento de facturas y documentos", "Staff retype details from invoices and contracts into your finance or case system.": "El personal vuelve a teclear los datos de facturas y contratos en tu sistema financiero o de gestión.", "An agent extracts the fields, checks them against your rules and flags anything that looks wrong.": "Un agente extrae los campos, los comprueba con tus reglas y señala cualquier cosa que parezca incorrecta.", "Lead qualification and follow-up": "Cualificación y seguimiento de clientes potenciales", "New enquiries wait until someone has time to research the company and reply.": "Las nuevas consultas esperan hasta que alguien tiene tiempo de investigar la empresa y responder.", "Agents research each lead, score it against your criteria and draft a personal first reply.": "Los agentes investigan cada cliente potencial, lo puntúan según tus criterios y redactan una primera respuesta personalizada.", "Regular reporting": "Informes periódicos", "Every week someone pulls figures from several tools into one report.": "Cada semana alguien recopila cifras de varias herramientas en un solo informe.", "An agent gathers the data, writes the summary and sends it with the numbers checked.": "Un agente reúne los datos, redacta el resumen y lo envía con las cifras comprobadas.", "Internal knowledge assistant": "Asistente de conocimiento interno", "Staff ask colleagues where a policy or procedure lives.": "El personal pregunta a sus compañeros dónde está una política o un procedimiento.", "An assistant answers from your own documents and shows which one it used.": "Un asistente responde a partir de tus propios documentos e indica cuál ha usado.", "How we keep it dependable": "Cómo lo hacemos fiable", "Agents are useful when you can trust them. These are the rules we build to.": "Los agentes son útiles cuando puedes confiar en ellos. Estas son las reglas que seguimos.", "People stay in control": "Las personas mantienen el control", "Agents handle the routine cases and pass the unclear ones to a person. You choose where approval is required.": "Los agentes gestionan los casos rutinarios y pasan los dudosos a una persona. Tú decides dónde hace falta aprobación.", "Built on the tools you have": "Sobre las herramientas que ya tienes", "We connect to your existing email, CRM, documents and databases instead of asking you to switch.": "Nos conectamos a tu correo, CRM, documentos y bases de datos actuales en lugar de pedirte que cambies.", "Measured against a baseline": "Medido frente a un punto de partida", "We agree what to measure before we build, such as hours spent, error rate and response time, and report against it.": "Antes de construir acordamos qué medir, como horas dedicadas, tasa de errores y tiempo de respuesta, y te informamos con esos datos.", "Careful with your data": "Cuidado con tus datos", "We design around your data protection requirements and only use AI providers and hosting you are comfortable with.": "Diseñamos según tus requisitos de protección de datos y solo usamos proveedores de IA y alojamiento con los que te sientas cómodo.", "Tell us about one process that slows your team down. We'll give you an honest view on whether an agent can take it on, and what a first project could look like.": "Cuéntanos un proceso que frena a tu equipo. Te daremos una opinión sincera sobre si un agente puede encargarse de él y cómo podría ser un primer proyecto.", "Your name": "Tu nombre", "Work email": "Correo de trabajo", "Company (optional)": "Empresa (opcional)", "What would you like to improve?": "¿Qué te gustaría mejorar?", "Send message": "Enviar mensaje", "Contact": "Contacto", "All rights reserved.": "Todos los derechos reservados.", "Language": "Idioma", "Solazul AI Consultants, home": "Solazul AI Consultants, inicio", "Main": "Principal", "Solazul AI Consultants, back to top": "Solazul AI Consultants, volver arriba", "For example: we answer the same customer questions by email all day.": "Por ejemplo: respondemos las mismas preguntas de clientes por correo todo el día.", "Athena Agent at the centre of a ring of ten specialist agents: Listings Scout, Yield Analyst, Short-let Analyst, Amenities Advisor, Transport Advisor, Report Composer, Census Analyst, Growth Estimator, Safety Analyst and Climate Advisor.": "Athena Agent en el centro de un círculo de diez agentes especializados: Listings Scout, Yield Analyst, Short-let Analyst, Amenities Advisor, Transport Advisor, Report Composer, Census Analyst, Growth Estimator, Safety Analyst y Climate Advisor.", "Consultancy": "Consultoría", "€100 per hour": "100 € por hora", "First consultation": "Primera consulta", "First hour free": "La primera hora es gratis"}, "pt": {"Skip to content": "Saltar para o conteúdo", "Menu": "Menu", "Services": "Serviços", "Our work": "O nosso trabalho", "Our process": "O nosso processo", "Examples": "Exemplos", "Get in touch": "Fale connosco", "AI agents that take the routine work off your team": "Agentes de IA que libertam a sua equipa do trabalho rotineiro", "We design and build teams of AI agents and automated workflows that run your repetitive business processes, so your people can focus on the work that needs them.": "Concebemos e criamos equipas de agentes de IA e fluxos de trabalho automatizados que tratam dos seus processos repetitivos, para que as suas pessoas se possam concentrar no trabalho que realmente precisa delas.", "See an agent we built": "Ver um agente que criámos", "Tell us one process that slows you down. We'll say honestly whether an agent can take it on.": "Fale-nos de um processo que o atrasa. Diremos com franqueza se um agente o pode assumir.", "From a single agent to a coordinated team": "De um único agente a uma equipa coordenada", "Every project starts with one process that costs your team time. We build the agents and workflows that take it on, and stay on to keep them working well.": "Cada projeto começa com um processo que custa tempo à sua equipa. Criamos os agentes e os fluxos que o assumem e continuamos presentes para que funcionem bem.", "AI agents built for one job": "Agentes de IA criados para uma tarefa", "Agents that read, decide and act inside the tools you already use: email, spreadsheets, your CRM, ticketing and internal systems.": "Agentes que leem, decidem e agem dentro das ferramentas que já utiliza: email, folhas de cálculo, o seu CRM, sistemas de tickets e sistemas internos.", "Multi-agent workflows": "Fluxos de trabalho com vários agentes", "Several agents with different roles, such as triage, research, drafting and checking, coordinated with clear hand-offs and a person in the loop where it matters.": "Vários agentes com funções diferentes, como triagem, pesquisa, redação e verificação, coordenados com passagens claras e uma pessoa a acompanhar onde é importante.", "Process automation and integrations": "Automatização de processos e integrações", "Connections between your systems so data moves without copy and paste, including the older systems that don't offer an easy integration.": "Ligações entre os seus sistemas para que os dados circulem sem copiar e colar, incluindo sistemas mais antigos que não oferecem uma integração fácil.", "Document and knowledge assistants": "Assistentes de documentos e conhecimento", "Agents that read contracts, invoices and policies, and answer questions from your own documents while showing which one they used.": "Agentes que leem contratos, faturas e políticas, e respondem a perguntas com base nos seus próprios documentos, indicando qual utilizaram.", "Process review and AI roadmap": "Análise de processos e roteiro de IA", "A short review of where time is lost, which tasks suit AI, and what each would save, so you choose what to build before you spend on it.": "Uma análise breve de onde se perde tempo, que tarefas são adequadas à IA e quanto cada uma pouparia, para que escolha o que criar antes de investir.", "Monitoring and support": "Monitorização e suporte", "Logs, reports and review steps, plus ongoing tuning so your agents stay accurate as your business changes.": "Registos, relatórios e passos de revisão, além de afinação contínua para que os seus agentes se mantenham precisos à medida que o seu negócio muda.", "Athena, a property research agent we built": "Athena, um agente de pesquisa imobiliária criado por nós", "Athena coordinates ten specialist agents to research property in Spain. Ask about a place and each specialist covers one area, from listings and rental yield to safety, transport and climate. The Report Composer then brings their findings together in one report.": "A Athena coordena dez agentes especializados para pesquisar imóveis em Espanha. Pergunte por uma zona e cada especialista trata de um aspeto, desde os anúncios e a rentabilidade do arrendamento até à segurança, aos transportes e ao clima. Depois, o Report Composer junta as conclusões num único relatório.", "One coordinator, ten specialists": "Um coordenador, dez especialistas", "Athena hands each part of a question to the agent best placed to answer it.": "A Athena entrega cada parte de uma pergunta ao agente mais indicado para lhe responder.", "Areas and individual properties": "Zonas e imóveis específicos", "Research a whole location, or dig into specific listings and what they could earn.": "Pesquise uma zona inteira ou analise anúncios específicos e o rendimento que poderiam gerar.", "One clear report": "Um relatório claro", "Every finding ends up in a single document you can read and share.": "Todas as conclusões ficam num único documento que pode ler e partilhar.", "How we work together": "Como trabalhamos em conjunto", "We start small, show working results early, and only scale up what proves its value.": "Começamos pequeno, mostramos resultados concretos cedo e só alargamos o que prova o seu valor.", "Discover": "Descobrir", "We map one process from start to finish: who does what, in which tools, and where the time goes. You get a clear view of what an agent can take on.": "Mapeamos um processo do início ao fim: quem faz o quê, em que ferramentas e onde se perde o tempo. Fica com uma visão clara do que um agente pode assumir.", "Design": "Conceber", "We agree each agent's role, the checks in place, and where a person stays in the loop. You see the plan and the expected savings before we build.": "Definimos em conjunto a função de cada agente, os controlos e onde uma pessoa intervém. Vê o plano e a poupança prevista antes de começarmos a construir.", "Build": "Construir", "We build and test on your real cases in small steps, so you see it working early and can change direction.": "Construímos e testamos com os seus casos reais, passo a passo, para que o veja a funcionar cedo e possa mudar de rumo.", "Run": "Pôr em funcionamento", "We launch, watch the results and keep improving. You get reports on time saved and accuracy, not just a hand-over.": "Lançamos, acompanhamos os resultados e continuamos a melhorar. Recebe relatórios sobre o tempo poupado e a precisão, não apenas uma entrega.", "Work agents can take on": "Trabalho que os agentes podem assumir", "Examples of the kind of processes we build for. Yours will be shaped around your own tools and the way your team works.": "Exemplos do tipo de processos para os quais criamos agentes. Os seus serão adaptados às suas ferramentas e à forma como a sua equipa trabalha.", "Process": "Processo", "Today": "Hoje", "With agents": "Com agentes", "Customer support triage": "Triagem do apoio ao cliente", "A person reads every incoming message, looks up the account, searches for the right policy and types a reply.": "Uma pessoa lê cada mensagem recebida, procura a conta, encontra a política certa e escreve uma resposta.", "Agents sort each request, gather the account details and draft a reply. A person approves the exceptions and anything sensitive.": "Os agentes classificam cada pedido, reúnem os dados da conta e redigem uma resposta. Uma pessoa aprova as exceções e tudo o que for sensível.", "Invoice and document processing": "Processamento de faturas e documentos", "Staff retype details from invoices and contracts into your finance or case system.": "A equipa volta a escrever os dados de faturas e contratos no seu sistema financeiro ou de gestão.", "An agent extracts the fields, checks them against your rules and flags anything that looks wrong.": "Um agente extrai os campos, verifica-os com as suas regras e assinala tudo o que pareça errado.", "Lead qualification and follow-up": "Qualificação e acompanhamento de potenciais clientes", "New enquiries wait until someone has time to research the company and reply.": "Os novos pedidos ficam à espera até alguém ter tempo para pesquisar a empresa e responder.", "Agents research each lead, score it against your criteria and draft a personal first reply.": "Os agentes pesquisam cada potencial cliente, avaliam-no segundo os seus critérios e redigem uma primeira resposta personalizada.", "Regular reporting": "Relatórios periódicos", "Every week someone pulls figures from several tools into one report.": "Todas as semanas alguém junta números de várias ferramentas num único relatório.", "An agent gathers the data, writes the summary and sends it with the numbers checked.": "Um agente recolhe os dados, escreve o resumo e envia-o com os números verificados.", "Internal knowledge assistant": "Assistente de conhecimento interno", "Staff ask colleagues where a policy or procedure lives.": "A equipa pergunta aos colegas onde está uma política ou um procedimento.", "An assistant answers from your own documents and shows which one it used.": "Um assistente responde com base nos seus próprios documentos e indica qual utilizou.", "How we keep it dependable": "Como garantimos a fiabilidade", "Agents are useful when you can trust them. These are the rules we build to.": "Os agentes são úteis quando se pode confiar neles. Estas são as regras que seguimos.", "People stay in control": "As pessoas mantêm o controlo", "Agents handle the routine cases and pass the unclear ones to a person. You choose where approval is required.": "Os agentes tratam dos casos de rotina e passam os menos claros a uma pessoa. A decisão sobre onde é necessária aprovação é sua.", "Built on the tools you have": "Assente nas ferramentas que já tem", "We connect to your existing email, CRM, documents and databases instead of asking you to switch.": "Ligamo-nos ao seu email, CRM, documentos e bases de dados atuais, em vez de lhe pedir que mude.", "Measured against a baseline": "Medido face a um ponto de partida", "We agree what to measure before we build, such as hours spent, error rate and response time, and report against it.": "Antes de construir, definimos o que medir, como horas gastas, taxa de erros e tempo de resposta, e reportamos com base nisso.", "Careful with your data": "Cuidado com os seus dados", "We design around your data protection requirements and only use AI providers and hosting you are comfortable with.": "Concebemos tudo de acordo com os seus requisitos de proteção de dados e só usamos fornecedores de IA e alojamento com que se sinta confortável.", "Tell us about one process that slows your team down. We'll give you an honest view on whether an agent can take it on, and what a first project could look like.": "Fale-nos de um processo que atrasa a sua equipa. Daremos uma opinião franca sobre se um agente o pode assumir e como poderia ser um primeiro projeto.", "Your name": "O seu nome", "Work email": "Email profissional", "Company (optional)": "Empresa (opcional)", "What would you like to improve?": "O que gostaria de melhorar?", "Send message": "Enviar mensagem", "Contact": "Contacto", "All rights reserved.": "Todos os direitos reservados.", "Language": "Idioma", "Solazul AI Consultants, home": "Solazul AI Consultants, página inicial", "Main": "Principal", "Solazul AI Consultants, back to top": "Solazul AI Consultants, voltar ao topo", "For example: we answer the same customer questions by email all day.": "Por exemplo: respondemos às mesmas perguntas de clientes por email o dia todo.", "Athena Agent at the centre of a ring of ten specialist agents: Listings Scout, Yield Analyst, Short-let Analyst, Amenities Advisor, Transport Advisor, Report Composer, Census Analyst, Growth Estimator, Safety Analyst and Climate Advisor.": "O Athena Agent ao centro de um círculo de dez agentes especializados: Listings Scout, Yield Analyst, Short-let Analyst, Amenities Advisor, Transport Advisor, Report Composer, Census Analyst, Growth Estimator, Safety Analyst e Climate Advisor.", "Consultancy": "Consultoria", "€100 per hour": "100 € por hora", "First consultation": "Primeira consulta", "First hour free": "A primeira hora é gratuita"}};
+  var META = {"en": {"title": "", "desc": "", "subject": "Enquiry from {name}", "name": "Name", "email": "Email", "company": "Company", "status": "Your email app should open with your message ready to send. If it doesn't, write to {email}."}, "es": {"title": "Solazul AI Consultants | Agentes de IA y automatización de procesos para empresas", "desc": "Solazul AI Consultants diseña y crea equipos de agentes de IA y flujos de trabajo automatizados que liberan a tu equipo del trabajo repetitivo y hacen más eficientes tus procesos.", "subject": "Consulta de {name}", "name": "Nombre", "email": "Correo", "company": "Empresa", "status": "Tu aplicación de correo debería abrirse con el mensaje listo para enviar. Si no es así, escribe a {email}."}, "pt": {"title": "Solazul AI Consultants | Agentes de IA e automatização de processos para empresas", "desc": "A Solazul AI Consultants concebe e cria equipas de agentes de IA e fluxos de trabalho automatizados que libertam a sua equipa do trabalho repetitivo e tornam os seus processos mais eficientes.", "subject": "Pedido de {name}", "name": "Nome", "email": "Email", "company": "Empresa", "status": "A sua aplicação de email deverá abrir com a mensagem pronta a enviar. Se isso não acontecer, escreva para {email}."}};
+  var LANGS = ["en", "es", "pt"];
+  var lang = "en";
+  var metaDesc = document.querySelector('meta[name="description"]');
+  META.en.title = document.title;
+  META.en.desc = metaDesc ? metaDesc.getAttribute("content") : "";
+
+  var textEls = Array.prototype.slice.call(document.querySelectorAll("[data-t]"));
+  textEls.forEach(function (el) { el._en = el.textContent.replace(/\s+/g, " ").trim(); });
+  var attrEls = Array.prototype.slice.call(document.querySelectorAll("[data-t-attr]"));
+  attrEls.forEach(function (el) {
+    el._en = {};
+    el.getAttribute("data-t-attr").split(" ").forEach(function (a) { el._en[a] = el.getAttribute(a); });
   });
+
+  function t(en) { return (lang !== "en" && I18N[lang][en]) || en; }
+
+  function setLang(next, save) {
+    lang = LANGS.indexOf(next) > -1 ? next : "en";
+    document.documentElement.lang = lang;
+    textEls.forEach(function (el) { el.textContent = t(el._en); });
+    attrEls.forEach(function (el) {
+      Object.keys(el._en).forEach(function (a) { el.setAttribute(a, t(el._en[a])); });
+    });
+    document.title = META[lang].title;
+    if (metaDesc) metaDesc.setAttribute("content", META[lang].desc);
+    document.querySelectorAll(".lang-btn").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    var st = document.getElementById("form-status");
+    if (st) st.textContent = "";
+    if (save) { try { localStorage.setItem("lang", lang); } catch (e) {} }
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang"), true); });
+  });
+
+  // Pick the starting language: ?lang= in the link, then the visitor's last choice, then their browser
+  var start = null;
+  var m = /[?&]lang=(en|es|pt)\b/.exec(location.search);
+  if (m) start = m[1];
+  if (!start) { try { start = localStorage.getItem("lang"); } catch (e) {} }
+  if (!start) {
+    var prefs = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < prefs.length && !start; i++) {
+      var code = String(prefs[i]).slice(0, 2).toLowerCase();
+      if (LANGS.indexOf(code) > -1) start = code;
+    }
+  }
+  if (start && start !== "en") setLang(start, false);
 
   // Year
   var year = document.getElementById("year");
@@ -676,28 +726,6 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
     });
   }
 
-  // Hero: stop the orbiting dots if the visitor prefers reduced motion
-  var art = document.querySelector(".hero-art");
-  if (art && reduceMotion && typeof art.pauseAnimations === "function") art.pauseAnimations();
-
-  // Workflow: light up the hand-offs once, when the section scrolls into view
-  var flow = document.getElementById("flow");
-  if (flow) {
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      flow.classList.add("is-live");
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            flow.classList.add("is-live");
-            io.disconnect();
-          }
-        });
-      }, { threshold: 0.35 });
-      io.observe(flow);
-    }
-  }
-
   // Contact form: opens the visitor's email app with the request filled in
   var form = document.getElementById("contact-form");
   var status = document.getElementById("form-status");
@@ -705,18 +733,25 @@ h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.005em}
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var d = new FormData(form);
-      var subject = "Enquiry from " + d.get("name");
+      var L = META[lang];
+      var subject = L.subject.replace("{name}", d.get("name"));
       var body = [
-        "Name: " + d.get("name"),
-        "Email: " + d.get("email"),
-        "Company: " + (d.get("company") || "-"),
+        L.name + ": " + d.get("name"),
+        L.email + ": " + d.get("email"),
+        L.company + ": " + (d.get("company") || "-"),
         "",
         d.get("message")
       ].join("\n");
       window.location.href = "mailto:" + CONTACT_EMAIL +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
-      status.innerHTML = "Your email app should open with your message ready to send. If it doesn't, write to <a href=\"mailto:" + CONTACT_EMAIL + "\">" + CONTACT_EMAIL + "</a>.";
+      var parts = L.status.split("{email}");
+      status.textContent = parts[0];
+      var a = document.createElement("a");
+      a.href = "mailto:" + CONTACT_EMAIL;
+      a.textContent = CONTACT_EMAIL;
+      status.appendChild(a);
+      status.appendChild(document.createTextNode(parts[1] || ""));
     });
   }
 })();
